@@ -1,0 +1,689 @@
+/* ============================================================
+   MediClaim — Health Insurance Portal
+   Blue & White Professional Healthcare Theme
+   ============================================================ */
+
+:root {
+  --primary:       #1565C0;
+  --primary-dark:  #0D47A1;
+  --primary-light: #E3F2FD;
+  --accent:        #0288D1;
+  --success:       #2E7D32;
+  --success-bg:    #E8F5E9;
+  --danger:        #C62828;
+  --danger-bg:     #FFEBEE;
+  --warning:       #E65100;
+  --warning-bg:    #FFF3E0;
+  --surface:       #FFFFFF;
+  --surface-alt:   #F5F7FA;
+  --border:        #DEE3EC;
+  --text-main:     #1A2340;
+  --text-muted:    #64748B;
+  --nav-height:    60px;
+  --radius:        10px;
+  --shadow:        0 2px 12px rgba(21,101,192,0.09);
+  --shadow-md:     0 4px 24px rgba(21,101,192,0.13);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--surface-alt);
+  color: var(--text-main);
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== LOGIN ===== */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 40%, #0288D1 100%);
+  padding: 20px;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.logo-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.login-sub {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.btn-login {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  height: 44px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.btn-login:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(21,101,192,0.35); }
+
+.login-hint {
+  background: var(--primary-light);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 12.5px;
+}
+.login-hint strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+.hint-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  color: var(--text-muted);
+}
+.hint-grid span:nth-child(odd) { font-weight: 600; color: var(--primary); }
+
+/* ===== TOP NAVBAR ===== */
+.app-navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-brand-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo-icon {
+  width: 34px; height: 34px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: #fff;
+}
+.nav-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+.navbar-user-area { display: flex; align-items: center; }
+.user-badge {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ===== APP BODY ===== */
+.app-body {
+  margin-top: var(--nav-height);
+  min-height: calc(100vh - var(--nav-height));
+}
+
+/* ===== TAB NAV ===== */
+.tab-nav-wrapper {
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  padding: 0 24px;
+  box-shadow: 0 2px 6px rgba(21,101,192,0.06);
+}
+.tab-nav {
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+.tab-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  font-size: 13.5px;
+  padding: 14px 18px !important;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.tab-link:hover {
+  color: var(--primary) !important;
+  background: var(--primary-light);
+}
+.tab-link.active {
+  color: var(--primary) !important;
+  border-bottom-color: var(--primary);
+  font-weight: 700;
+  background: transparent;
+}
+
+/* ===== TAB PANELS ===== */
+.tab-content-panel {
+  padding: 28px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.panel-header {
+  margin-bottom: 24px;
+}
+.panel-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+.panel-header p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 13.5px;
+}
+
+/* ===== CARDS ===== */
+.content-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.card-section-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--primary-light);
+}
+
+/* ===== FORM ===== */
+.form-label {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+.form-control, .form-select {
+  border-color: var(--border);
+  border-radius: 7px;
+  font-size: 14px;
+  color: var(--text-main);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(21,101,192,0.12);
+}
+.req { color: #e53935; }
+.form-text { color: var(--text-muted); font-size: 12px; margin-top: 4px; }
+
+/* ===== SUBMIT BUTTON ===== */
+.btn-submit-claim {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  padding: 10px 28px;
+  font-weight: 600;
+  border-radius: 8px;
+  color: #fff;
+  transition: all 0.2s;
+}
+.btn-submit-claim:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(21,101,192,0.3);
+  color: #fff;
+}
+
+/* ===== POLICY INFO CARD ===== */
+.info-card { background: var(--primary-light) !important; border-color: #BBDEFB !important; }
+
+.policy-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border: 1px solid #BBDEFB;
+  font-size: 12.5px;
+}
+.policy-item .pid {
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 13px;
+}
+.policy-item .pmeta { color: var(--text-muted); margin-top: 3px; }
+.policy-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.policy-badge.active { background: #C8E6C9; color: #2E7D32; }
+.policy-badge.inactive { background: #FFCDD2; color: #C62828; }
+
+/* ===== FRAUD RULES CARD ===== */
+.fraud-info-card { background: #FFFDE7 !important; border-color: #FFF9C4 !important; }
+.fraud-rules-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+}
+.fraud-rules-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #FFF9C4;
+  font-size: 13px;
+  color: var(--text-main);
+}
+.rule-tag {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.rule-tag.medium { background: #FFE0B2; color: #E65100; }
+.rule-tag.high   { background: #FFCDD2; color: #C62828; }
+
+.risk-legend {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+.risk-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.risk-badge.low    { background: #C8E6C9; color: #2E7D32; }
+.risk-badge.medium { background: #FFE0B2; color: #E65100; }
+.risk-badge.high   { background: #FFCDD2; color: #C62828; }
+
+/* ===== RESULT CARD ===== */
+.result-card { border-left: 4px solid var(--primary); }
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.result-item label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 2px;
+}
+.result-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ===== FRAUD SCORE METER ===== */
+.fraud-meter-wrap { margin: 16px 0 8px; }
+.fraud-meter-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.fraud-meter-bar {
+  height: 10px;
+  background: #E0E0E0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.fraud-meter-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.7s ease;
+}
+
+/* ===== STATUS BADGES ===== */
+.status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+.status-badge.submitted      { background: #E3F2FD; color: #1565C0; }
+.status-badge.under-review   { background: #FFF9C4; color: #F57F17; }
+.status-badge.approved       { background: #C8E6C9; color: #2E7D32; }
+.status-badge.rejected       { background: #FFCDD2; color: #C62828; }
+.status-badge.info-required  { background: #FCE4EC; color: #AD1457; }
+
+/* ===== FRAUD SCORE CHIPS ===== */
+.fraud-chip {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 10px;
+}
+.fraud-chip.low    { background: #C8E6C9; color: #2E7D32; }
+.fraud-chip.medium { background: #FFE0B2; color: #E65100; }
+.fraud-chip.high   { background: #FFCDD2; color: #C62828; }
+
+/* ===== TABLE ===== */
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.claim-count-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.claims-table { font-size: 13px; }
+.claims-table thead th {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 2px solid #BBDEFB;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+.claims-table tbody td {
+  padding: 10px 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+.claims-table tbody tr:hover { background: #F8FBFF; }
+.claims-table tbody tr:last-child td { border-bottom: none; }
+
+.claim-id-cell {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-btn {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.action-btn:hover { transform: translateY(-1px); }
+.action-btn.approve { background: #C8E6C9; color: #2E7D32; }
+.action-btn.approve:hover { background: #A5D6A7; }
+.action-btn.reject  { background: #FFCDD2; color: #C62828; }
+.action-btn.reject:hover  { background: #EF9A9A; }
+.action-btn.info    { background: #FCE4EC; color: #AD1457; }
+.action-btn.info:hover    { background: #F48FB1; }
+.action-btn.disabled-btn { opacity: 0.4; cursor: default; }
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--text-muted);
+}
+.empty-state i { font-size: 48px; display: block; margin-bottom: 12px; opacity: 0.35; }
+.empty-state p { font-size: 14px; margin: 0; }
+
+/* ===== ACCESS DENIED ===== */
+.access-denied-card {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+.access-denied-card i { font-size: 52px; color: #EF9A9A; display: block; margin-bottom: 14px; }
+.access-denied-card h4 { color: var(--danger); margin-bottom: 8px; }
+
+/* ===== TRACK RESULTS ===== */
+.track-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.track-card .track-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.track-card .track-claim-id {
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--primary);
+}
+.track-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.track-detail-item label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 2px;
+}
+.track-detail-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ===== STATUS TIMELINE ===== */
+.status-timeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+.timeline-step .step-dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #E0E0E0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  color: #9E9E9E;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+}
+.timeline-step.done .step-dot  { background: var(--primary); color: #fff; }
+.timeline-step.active .step-dot { background: #F57F17; color: #fff; }
+.timeline-step.approved .step-dot { background: var(--success); color: #fff; }
+.timeline-step.rejected .step-dot { background: var(--danger); color: #fff; }
+.timeline-step .step-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.timeline-step.done .step-label   { color: var(--primary); }
+.timeline-step.active .step-label { color: #F57F17; }
+.timeline-connector {
+  flex: 1;
+  height: 3px;
+  background: #E0E0E0;
+  min-width: 20px;
+  margin-bottom: 22px;
+}
+.timeline-connector.done { background: var(--primary); }
+
+/* ===== OFFICER NOTE ===== */
+.officer-note-box {
+  background: #FFF9C4;
+  border: 1px solid #FFE082;
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #5D4037;
+  margin-top: 10px;
+}
+.officer-note-box strong { color: #E65100; }
+
+/* ===== REPORT STAT CARDS ===== */
+.stat-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 4px solid;
+}
+.stat-card.total    { border-left-color: var(--primary); }
+.stat-card.approved { border-left-color: var(--success); }
+.stat-card.rejected { border-left-color: var(--danger); }
+.stat-card.pending  { border-left-color: #F57F17; }
+.stat-card.amount   { border-left-color: var(--accent); }
+
+.stat-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.stat-card.total    .stat-icon { background: #E3F2FD; color: var(--primary); }
+.stat-card.approved .stat-icon { background: #E8F5E9; color: var(--success); }
+.stat-card.rejected .stat-icon { background: #FFEBEE; color: var(--danger); }
+.stat-card.pending  .stat-icon { background: #FFF3E0; color: #F57F17; }
+.stat-card.amount   .stat-icon { background: #E1F5FE; color: var(--accent); }
+
+.stat-content .stat-num {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-main);
+}
+.stat-content .stat-lbl {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ===== RISK/TREATMENT BARS ===== */
+.dist-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.dist-label { font-size: 12.5px; font-weight: 600; width: 80px; color: var(--text-main); }
+.dist-bar-wrap { flex: 1; background: #EEF2F7; border-radius: 8px; height: 14px; overflow: hidden; }
+.dist-bar-fill { height: 100%; border-radius: 8px; transition: width 0.6s ease; }
+.dist-count { font-size: 12px; font-weight: 700; width: 28px; text-align: right; color: var(--text-muted); }
+
+/* ===== MODAL ===== */
+.modal-content { border-radius: var(--radius); border: none; box-shadow: var(--shadow-md); }
+.modal-header { border-bottom: 1px solid var(--border); padding: 16px 20px; }
+.modal-footer { border-top: 1px solid var(--border); padding: 12px 20px; }
+
+/* ===== ALERTS ===== */
+.alert { border-radius: 8px; font-size: 13.5px; }
+.alert-success { background: #E8F5E9; color: #2E7D32; border-color: #A5D6A7; }
+.alert-danger  { background: #FFEBEE; color: #C62828; border-color: #FFCDD2; }
+.alert-warning { background: #FFF3E0; color: #E65100; border-color: #FFE0B2; }
+.alert-info    { background: #E3F2FD; color: #1565C0; border-color: #BBDEFB; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767px) {
+  .tab-nav-wrapper { padding: 0 12px; overflow-x: auto; }
+  .tab-link { font-size: 12px; padding: 12px 12px !important; }
+  .tab-content-panel { padding: 16px 12px; }
+  .result-grid { grid-template-columns: 1fr; }
+  .track-detail-grid { grid-template-columns: 1fr 1fr; }
+  .claims-table { font-size: 12px; }
+  .claims-table thead th, .claims-table tbody td { padding: 8px; }
+  .navbar-user-area .user-badge { display: none; }
+}
